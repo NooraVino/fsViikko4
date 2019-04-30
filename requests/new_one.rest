@@ -2,8 +2,9 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "reija",
-    "author": "Noora",
-    "url": "jakku",
-    "likes": ""
+    "title": "uusikokeilu",
+    "author": "Maija",
+    "url": "urururur",
+    "likes": "8",
+    "userId": "5cc7f67d7021bb1926821afe"
     }

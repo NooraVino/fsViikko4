@@ -1,13 +1,18 @@
-const notesRouter = require('express').Router()
+const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
+const User = require('../models/user')
 
-notesRouter.get('/', async (request, response) => {
-  const blogs = await Blog.find({})
+blogsRouter.get('/', async (request, response) => {
+  const blogs = await Blog
+  .find({}).populate('user', { username: 1, name: 1 })
   response.json(blogs.map(blog => blog.toJSON()))
 })
 
-notesRouter.post('/', async (request, response) => {
+blogsRouter.post('/', async (request, response, next) => {
   const blog = new Blog(request.body)
+  const user = await User
+  .findById("5cc7f67d7021bb1926821afe")
+  blog.user = user.id
 
   if (!blog.likes) {
     blog.likes = 0
@@ -16,16 +21,21 @@ notesRouter.post('/', async (request, response) => {
     return response.status(400).send({error: 'et voi lisätä blogia ilman otsikkoa tai osoitetta.'})
   }
 
-  const newBlog = await blog.save()
-  response.json(newBlog.toJSON())
+  const result = await blog.save()
+  user.blogs = user.blogs.concat(blog)
+  await user.save()
+
+  response.status(201).json(result)
+
+
 
 })
 
-notesRouter.delete('/:id', async (request, response) => {
+blogsRouter.delete('/:id', async (request, response) => {
   const blog = await Blog.findById(request.params.id)
     await Blog.findByIdAndRemove(request.body.id)
     response.status(204).end()
  
 })
 
-module.exports = notesRouter
+module.exports = blogsRouter
