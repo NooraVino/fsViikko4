@@ -21,4 +21,11 @@ notesRouter.post('/', async (request, response) => {
 
 })
 
+notesRouter.delete('/:id', async (request, response) => {
+  const blog = await Blog.findById(request.params.id)
+    await Blog.findByIdAndRemove(request.body.id)
+    response.status(204).end()
+ 
+})
+
 module.exports = notesRouter
