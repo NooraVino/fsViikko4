@@ -1,10 +1,11 @@
 POST http://localhost:3003/api/blogs 
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphdHVubnVzIiwiaWQiOiI1Y2NhOTdmYzhiZjcxYjY3NzljNGY3MjkiLCJpYXQiOjE1NTY3ODM5MzR9.STJ0ZoaYOqTzEPXFd1ASlVOeuaBelLJ2RFCEmcqHnms
 
-{
-    "title": "uusikokeilu",
-    "author": "Maija",
-    "url": "urururur",
+    {
+    "title": "uusi muistiinpano ja EI toimiva token",
+    "author": "Noora",
+    "url": "wwwwwwww",
     "likes": "8",
     "userId": "5cc7f67d7021bb1926821afe"
     }
