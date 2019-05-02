@@ -1,9 +1,9 @@
 POST http://localhost:3003/api/blogs 
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphdHVubnVzIiwiaWQiOiI1Y2NhOTdmYzhiZjcxYjY3NzljNGY3MjkiLCJpYXQiOjE1NTY3ODM5MzR9.STJ0ZoaYOqTzEPXFd1ASlVOeuaBelLJ2RFCEmcqHnms
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphdHVubnVzIiwiaWQiOiI1Y2NhOTdmYzhiZjcxYjY3NzljNGY3MjkiLCJpYXQiOjE1NTY3ODc5NzV9.fPddspYWafvhzV9c2BAOXWLRsyL_xJRdP7RiKuTmRys
 
     {
-    "title": "uusi muistiinpano ja EI toimiva token",
+    "title": "vielä yksi",
     "author": "Noora",
     "url": "wwwwwwww",
     "likes": "8",
